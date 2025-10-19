@@ -1,26 +1,108 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-box {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.task-input:focus {
+  border-color: #0070f3;
+}
+
+.add-btn {
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #0059c1;
+}
+
+.no-task {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.task-list {
+  list-style-type: none;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fb;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.task-item span {
+  color: #333;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #d10000;
 }
