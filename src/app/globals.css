@@ -1,3 +1,7 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 /* Reset some defaults */
 * {
   box-sizing: border-box;
@@ -7,11 +11,13 @@
 }
 
 body {
-  background-color: #f2f4f8;
+  background-color: #f2f4f8 !important;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -22,12 +28,13 @@ body {
 }
 
 .todo-box {
-  background: white;
+  background: white !important;
   padding: 30px 25px;
   border-radius: 12px;
   width: 100%;
   max-width: 400px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e0e0e0;
 }
 
 .title {
@@ -56,7 +63,7 @@ body {
 }
 
 .add-btn {
-  background-color: #0070f3;
+  background-color: #ef4444;
   border: none;
   color: white;
   padding: 10px 15px;
@@ -67,7 +74,7 @@ body {
 }
 
 .add-btn:hover {
-  background-color: #0059c1;
+  background-color: #dc2626;
 }
 
 .no-task {
