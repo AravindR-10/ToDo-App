@@ -1,9 +1,30 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
+
+  const STORAGE_KEY = "todos";
+
+  // load todos from localStorage once on mount
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) setTodos(JSON.parse(raw));
+    } catch (e) {
+      // ignore parse errors
+    }
+  }, []);
+
+  // persist todos to localStorage whenever they change
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+    } catch (e) {
+      // ignore storage errors
+    }
+  }, [todos]);
 
   const addTask = () => {
     if (task.trim() === "") return;
